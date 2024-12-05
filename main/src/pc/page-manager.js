@@ -3,7 +3,8 @@
 import $ from 'jquery'
 import _ from 'lodash'
 import i18n from 'i18next-client'
-import i18nextJquery from 'i18next-jquery'
+// import i18nextJquery from 'i18next-jquery'
+import jqueryI18next from 'jquery-i18next'
 import Modernizr from 'exports?Modernizr!modernizr-custom'
 import StateMachine from 'javascript-state-machine'
 
@@ -346,13 +347,13 @@ class PageManager {
 
   initLocales() {
     // localise
-    i18nextJquery(i18n, $, {
+    jqueryI18next.init(i18n, $, {
       tName: 't',
       i18nName: 'i18n',
       handleName: 'localize',
       selectorAttr: 'data-i18n',
-      targetAttr: 'data-i18n-target',
-      optionsAttr: 'data-i18n-options',
+      targetAttr: 'i18n-target',
+      optionsAttr: 'i18n-options',
       useOptionsAttr: false,
       parseDefaultValueFromContent: true
     })
